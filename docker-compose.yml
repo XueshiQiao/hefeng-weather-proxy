@@ -1,0 +1,13 @@
+services:
+  proxy:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - HEFENG_HOST=${HEFENG_HOST}
+      - HEFENG_API_KEY=${HEFENG_API_KEY}
+      - PROXY_TOKEN=${PROXY_TOKEN}
+      - PORT=3000
+      - TIMEOUT=15000
+      - MAX_BODY_SIZE=1048576
+    restart: unless-stopped
